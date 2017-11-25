@@ -21,4 +21,5 @@ workflows:
     jobs:
       - build-push-image
       - pull-test-image:
-          requires: build-push-image
+          requires:
+            - build-push-image
