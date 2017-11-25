@@ -11,10 +11,9 @@ jobs:
       - run: docker push fernfernfern/demo:0.0.1
   pull-test-image:
     docker:
-      - image: circleci/python:2.7
+      - image: fernfernfern/demo:0.0.1
     steps:
       - checkout
-      - setup_remote_docker
 
 workflows:
   version: 2
