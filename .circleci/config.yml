@@ -1,9 +1,22 @@
-ersion: 2
+version: 2
 jobs:
-  build:
+  build-push-image:
     docker:
       - image: circleci/python:2.7
     steps:
       - checkout
       - setup_remote_docker
-      - run: docker ps
+      - run: docker login
+
+  pull-test-image:
+    steps:
+      - checkout
+      - setup_remote_docker
+
+workflows:
+  version: 2
+  jobs:
+    - build-push-image
+    - pull-test-image
+        requires:
+          - build-push-image
