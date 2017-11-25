@@ -8,7 +8,7 @@ jobs:
       - setup_remote_docker
       - run: docker login --username=fernfernfern --password=$DOCKERHUB_PASS
       - run: docker build -t fernfernfern/demo:0.0.1 .
-
+      - run: docker push fernfernfern/demo:0.0.1
   pull-test-image:
     docker:
       - image: circleci/python:2.7
