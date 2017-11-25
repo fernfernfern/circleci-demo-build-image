@@ -14,6 +14,8 @@ jobs:
       - image: fernfernfern/demo:0.0.1
     steps:
       - checkout
+      - run: service --status-all
+      - run: nginx -v
       - run: curl localhost:80 | grep "Thank you for using nginx"
 
 workflows:
