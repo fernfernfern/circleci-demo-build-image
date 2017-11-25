@@ -15,8 +15,9 @@ jobs:
 
 workflows:
   version: 2
-  jobs:
-    - build-push-image
-    - pull-test-image
-        requires:
-          - build-push-image
+  build_and_test:
+    jobs:
+      - build-push-image
+      - pull-test-image
+          requires:
+            - build-push-image
