@@ -4,4 +4,4 @@ RUN apt-get update && apt-get install -y \
   nginx \
   git
 
-CMD [ "nginx" ]
+RUN echo service start nginx >> /etc/bash.bashrc 
