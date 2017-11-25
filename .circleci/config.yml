@@ -3,13 +3,10 @@ jobs:
   build-push-image:
     docker:
       - image: circleci/python:2.7
-        auth:
-          username: fernfernfern
-          password: $DOCKERHUB_PASS
     steps:
       - checkout
       - setup_remote_docker
-      - run: docker login
+      - run: docker login fernfernfern $DOCKERHUB_PASS
 
   pull-test-image:
     docker:
