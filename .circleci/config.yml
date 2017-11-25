@@ -9,6 +9,8 @@ jobs:
       - run: docker login
 
   pull-test-image:
+    docker:
+      - image: circleci/python:2.7
     steps:
       - checkout
       - setup_remote_docker
