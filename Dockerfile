@@ -4,4 +4,4 @@ RUN apt-get update && apt-get install -y \
   nginx \
   git
 
-CMD ['service', 'start', 'nginx']
+CMD ['/usr/bin/nginx']
