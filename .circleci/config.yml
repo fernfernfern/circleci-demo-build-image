@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test-image:
+  build:
     docker:
       - image: fernfernfern/demo
     steps:
