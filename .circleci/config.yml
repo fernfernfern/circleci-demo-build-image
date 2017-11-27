@@ -1,29 +1,8 @@
 version: 2
 jobs:
-  build-push-image:
+  test-image:
     docker:
-      - image: circleci/python:2.7
+      - image: fernfernfern/demo
     steps:
       - checkout
-      - setup_remote_docker
-      - run: docker login --username=fernfernfern --password=$DOCKERHUB_PASS
-      - run: docker build -t fernfernfern/demo:0.0.1 .
-      - run: docker push fernfernfern/demo:0.0.1
-  pull-test-image:
-    docker:
-      - image: fernfernfern/demo:0.0.1
-    steps:
-      - checkout
-      - run: nginx
-      - run: service --status-all
-      - run: nginx -v
-      - run: curl localhost:80 | grep "Thank you for using nginx"
-
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build-push-image
-      - pull-test-image:
-          requires:
-            - build-push-image
+      - run: node test.js

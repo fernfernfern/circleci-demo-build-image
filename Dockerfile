@@ -1,5 +1,3 @@
-FROM python:2.7-stretch
+FROM circleci/node:8.9.1-stretch
 
-RUN apt-get update && apt-get install -y \
-  nginx \
-  git
+RUN sudo yarn global add puppeteer
