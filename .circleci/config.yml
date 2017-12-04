@@ -4,4 +4,4 @@ jobs:
     docker:
       - image: fernfernfern/demo
     steps:
-      - run: export TERM=dumb && jp2a --height=30 /home/image.jpg
+      - run: export TERM=dumb && jp2a --height=35 /home/image.jpg
