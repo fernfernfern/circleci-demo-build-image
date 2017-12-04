@@ -4,5 +4,4 @@ jobs:
     docker:
       - image: fernfernfern/demo
     steps:
-      - checkout
-      - run: node test.js
+      - run: jp2a /home/image.jpg
