@@ -4,4 +4,8 @@ jobs:
     docker:
       - image: fernfernfern/demo
     steps:
+      - checkout
       - run: export TERM=dumb && jp2a --height=35 /home/image.jpg
+      - run: /usr/bin/nginx
+      - run: nginx -v
+      - run: curl localhost:80 | grep "Thank you for using nginx"
