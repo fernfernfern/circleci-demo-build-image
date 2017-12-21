@@ -4,6 +4,6 @@ USER root
 
 RUN apt-get update
 
-RUN apt-get install nginx jp2a
+RUN apt-get install nginx
 
-COPY image.jpg /home/image.jpg
+RUN git clone https://github.com/CircleCI-Public/circleci-dockerfiles.git
