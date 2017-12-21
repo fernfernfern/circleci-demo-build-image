@@ -5,6 +5,6 @@ jobs:
       - image: fernfernfern/demo
     steps:
       - checkout
-      - run: /usr/bin/nginx
+      - run: nginx
       - run: nginx -v
       - run: curl localhost:80 | grep "Thank you for using nginx"
