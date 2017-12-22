@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: fernfernfern/demo
+      - image: fernfernfern/demo:v2
     steps:
       - checkout
       - run: nginx
