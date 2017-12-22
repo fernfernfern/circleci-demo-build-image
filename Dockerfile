@@ -1,4 +1,4 @@
-FROM circleci/node:8.9.1-stretch
+FROM circleci/node:8.9.3-stretch
 
 USER root
 
